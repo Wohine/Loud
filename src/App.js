@@ -5,13 +5,15 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from './Register';
 import Reset from './Reset';
 import Player from './Player';
+import Welcome from './Welcome';
 
 function App() {
   return (
     <div className="app">
       <Router>
         <Routes>
-          <Route exact path="/" element={<Login />} />
+          <Route exact path="/" element={<Welcome />} />
+          <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/reset" element={<Reset />} />
           <Route exact path="/home" element={<Player />} />

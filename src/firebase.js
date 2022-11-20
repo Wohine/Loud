@@ -75,8 +75,9 @@ const sendPasswordReset = async (email) => {
     }
 };
 
+
 const logout = () => {
     signOut(auth);
 };
 
-export {auth, db, sendPasswordReset, signInWithEmailAndPassword, signInWithGoogle, registerWithEmailAndPassword}
+export {auth, db, sendPasswordReset, logInWithEmailAndPassword, signInWithGoogle, registerWithEmailAndPassword, logout}

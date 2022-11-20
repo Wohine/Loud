@@ -40,6 +40,8 @@
 .body__songs {
     z-index: 1;
     margin: 20px -30px;
+    margin-bottom: 10%;
+    margin-right: 10%;
 }
 
 .body__icons {

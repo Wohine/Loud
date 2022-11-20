@@ -29,3 +29,9 @@
 .header__right > h4 {
     margin-left: 1%;
 }
+
+.header__dropDownMainButton {
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+}
