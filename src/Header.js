@@ -1,7 +1,13 @@
 import React from 'react'
 import './Header.css'
 import SearchIcon from "@mui/icons-material/Search";
+import { auth } from './firebase';
+
+
 function Header() {
+
+  
+
   return (
     <div className='header'>
         <div className='header__left'>
@@ -12,7 +18,7 @@ function Header() {
             <SearchIcon/>
         </div>
         <div className='header__right'>
-            <h4>Martin Hodne</h4>
+          <h4>{auth.currentUser.email}</h4>
         </div>
     </div>
   )
