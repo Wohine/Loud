@@ -15,7 +15,3 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
-export {auth, db, sendPasswordReset, signInWithEmailAndPassword, signInWithGoogle, registerWithEmailAndPassword}
-
-export {db,auth};
