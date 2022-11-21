@@ -1,9 +1,18 @@
+import React from 'react';
+import './Login.css';
+import {accessUrl} from './spotify.js'
+
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, signInWithEmailAndPassword, signInWithGoogle } from "./firebase.js";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./Login.css";
 function Login() {
+    return(
+        <div className='login'>
+            <img src=
+            'https://cdn.discordapp.com/attachments/1039205569048883344/1039216224816615504/logo-no-background.png' alt=''></img>
+            <a href={accessUrl}>LOGG INN ELLER REGISTRER</a>
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, loading, error] = useAuthState(auth);
@@ -47,6 +56,7 @@ function Login() {
         <div>
           Don't have an account? <Link to="/register">Register</Link> now.
         </div>
+  );
       </div>
     </div>
   );

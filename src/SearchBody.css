@@ -1,4 +1,4 @@
-.body {
+.searchBody {
     overflow-y: overlay;
     flex: 0.8;
     color: white;
@@ -8,57 +8,57 @@
     color: whitesmoke;
 }
 
-.body::-webkit-scrollbar {
+.searchBody::-webkit-scrollbar {
     display: none;
 }
 
-.body__info {
+.searchBody__info {
     display: flex;
     align-items: flex-end;
     padding: 3%;
 }
 
-.body__info > img {
+.searchBody__info > img {
     height: 15vw;
     margin: 0 5%;
     box-shadow: 0 4px 60px rgba(0,0,0,0.5);
 }
 
-.body__infoText {
+.searchBody__infoText {
     flex: 1;
 }
 
-.body__infoText > h2 {
+.searchBody__infoText > h2 {
     font-size: 3em;
     margin-bottom: 3%;
 }
 
-.body__infoText > p {
+.searchBody__infoText > p {
     font-size: 1em;
 }
 
-.body__songs {
+.searchBody__songs {
     z-index: 1;
     margin: 20px -30px;
     margin-bottom: 10%;
     margin-right: 10%;
 }
 
-.body__icons {
+.searchBody__icons {
     display: flex;
     align-items: center;
     margin-left: 9%;
 }
 
-.body__icons > .MuiSvgIcon-root {
+.searchBody__icons > .MuiSvgIcon-root {
     margin-right: 2%;
 }
 
-.body__shuffle {
+.searchBody__shuffle {
     font-size: 300% !important;
 }
 
-.body__shuffle:hover {
+.searchBody__shuffle:hover {
     transition: 100ms transform ease-in;
     transform: scale(1.08);
   }
