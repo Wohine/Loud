@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from "react";
 import './Login.css';
-import {accessUrl} from './spotify.js'
 import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from "./firebase.js";
 import { useAuthState } from "react-firebase-hooks/auth";
