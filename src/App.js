@@ -5,14 +5,14 @@ import { getTokenFromResponse } from './spotify';
 import SpotifyWebApi from 'spotify-web-api-js';
 import Player from './Player';
 import { useStateValue } from './StateProvider';
-
-const spotify = new SpotifyWebApi();
-import Login from './Login';
-import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from './Register';
 import Reset from './Reset';
-import Player from './Player';
+import Welcome from "./Welcome"
+import SearchPage from "./SearchPage"
+
+const spotify = new SpotifyWebApi();
+
 
 function App() {
 
