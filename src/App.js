@@ -8,11 +8,9 @@ import { useStateValue } from './StateProvider';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from './Register';
 import Reset from './Reset';
-import Welcome from "./Welcome"
-import SearchPage from "./SearchPage"
-
-const spotify = new SpotifyWebApi();
-
+import Player from './Player';
+import Welcome from './Welcome';
+import SearchPage from './SearchPage';
 
 function App() {
 

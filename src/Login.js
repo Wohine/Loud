@@ -2,13 +2,17 @@ import React from 'react';
 import './Login.css';
 import {accessUrl} from './spotify.js'
 import { Link, useNavigate } from "react-router-dom";
-import { auth, signInWithEmailAndPassword, signInWithGoogle } from "./firebase.js";
+import { auth, logInWithEmailAndPassword, signInWithGoogle } from "./firebase.js";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./Login.css";
 function Login() {
 
   return (
     <div className="login">
+
+        <img className="logoImage" src=
+                'https://cdn.discordapp.com/attachments/1039205569048883344/1039216224816615504/logo-no-background.png' alt=''></img>
+    
       <div className="login__container">
         <input
           type="text"
@@ -23,6 +27,7 @@ function Login() {
         />
         <button
           className="login__btn"
+          onClick={() => logInWithEmailAndPassword(email, password)}
         >
           Login
         </button>
