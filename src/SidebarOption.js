@@ -1,11 +1,12 @@
 import React from 'react'
 import "./SidebarOption.css"
+import { Link } from 'react-router-dom';
 
-function SidebarOption({title, Icon}) {
+function SidebarOption({Icon, title, link}) {
   return (
     <div className='sidebarOption'>
         {Icon && <Icon className="sidebarOption__icon" />}
-        {Icon ? <h4>{title}</h4> : <p>{title}</p>}
+        <Link to={link}>{title}</Link>
     </div>
   )
 }

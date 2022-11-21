@@ -1,0 +1,54 @@
+.spiller{
+    font-family: monospace;
+    color:black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+    /* box-shadow: inset -6px -6px 12px rgba(0,0,0,.8); */
+ }
+ .spiller > h4{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+ }
+ .spiller > p{
+    color: #aaa;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+ }
+ .spillerDetail .spillerDetail__img{
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+ }
+ .spillerDetail__img img{
+    display: block;
+    margin: 0px auto;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 50%;
+    box-shadow: 6px 6px 12px rgba(0,0,0,.8), -6px -6px 12px rgba(255,255,255,0.4);
+ }
+ .spillerDetail__{
+    color: #eee;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,.8), -2px -2px 4px rgba(255,255,255,0.4);
+    text-align: center;
+    margin-bottom: 10px;
+ }
+ .spillerDetail__artist{
+    color: #aaa;
+    font-size: 20px;
+    /*text-shadow: 2px 2px 4px rgba(0,0,0,.8), -2px -2px 4px rgba(255,255,255,0.4);*/
+    text-align: center;
+    margin-right: 10%;
+ }
+
+ .spiller__element {
+    margin: 5%;
+ }

@@ -11,6 +11,7 @@ function Header() {
   const [user] = useAuthState(auth);
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
+  const userMail = auth.currentUser.email;
   
 
   const handleMenuOne = () => {
@@ -36,7 +37,7 @@ function Header() {
         <div className='header__right'>
         <Dropdown
           open={open}
-          trigger={<button className='header__dropDownMainButton'>{auth.currentUser.email}</button>}
+          trigger={<button className='header__dropDownMainButton'>{user ? (userMail) : ("Log in")}</button>}
           menu={[
         <button onClick={handleMenuOne}>Profile</button>,
         <button onClick={handleMenuTwo}>Sign Out</button>,

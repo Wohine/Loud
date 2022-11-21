@@ -6,6 +6,7 @@ import Register from './Register';
 import Reset from './Reset';
 import Player from './Player';
 import Welcome from './Welcome';
+import SearchPage from './SearchPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/reset" element={<Reset />} />
           <Route exact path="/home" element={<Player />} />
+          <Route exact path="/search" element={<SearchPage />} />
         </Routes>
       </Router>
     </div>
