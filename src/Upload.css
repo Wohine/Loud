@@ -1,0 +1,12 @@
+.upload {
+    overflow-y: overlay;
+    flex: 0.8;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+    background-color: rgb(84, 168, 236);
+    height: 100vh;
+    color: whitesmoke;
+}
+
+.upload__input {
+    margin-left: 40px;
+}

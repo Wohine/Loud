@@ -7,6 +7,7 @@ import Reset from './Reset';
 import Player from './Player';
 import Welcome from './Welcome';
 import SearchPage from './SearchPage';
+import UploadPage from './UploadPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/reset" element={<Reset />} />
           <Route exact path="/home" element={<Player />} />
           <Route exact path="/search" element={<SearchPage />} />
+          <Route exact path="/upload" element={<UploadPage />} />
         </Routes>
       </Router>
     </div>
