@@ -9,16 +9,22 @@ export const initialState = {
 const reducer = (state, action) => {
     console.log(action);
     switch(action.type) {
-        case 'SET_USER':
+        case 'SET_PLAYING':
             return {
                 ...state,
-                user: action.user
+                playing: action.playing
             }
         
-        case 'SET_PLAYLISTS':
+        case 'SET_TITLE':
             return {
                 ...state,
-                playlists: action.playlists,
+                title: action.title,
+            }
+
+        case 'SET_IMAGE':
+            return {
+                ...state,
+                image: action.image,
             }
 
         default:

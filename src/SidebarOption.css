@@ -5,6 +5,7 @@
     transition: 200ms color ease-in;
     display: flex;
     align-items: center;
+    margin-left: 5%;
 }
 
 .sidebarOption:hover {
@@ -16,10 +17,14 @@
     padding-right: 10px;
 }
 
-.sidebarOption > p {
-  margin-top: 10px;
-  margin-left: 20px;
-  font-size: 14px;
+.sidebarOption__link {
+    text-decoration: none !important;
+    color: gray;
+}
+
+.sidebarOption__link:hover {
+    transition: 200ms color ease-in;
+    color: whitesmoke;
 }
 
 .sidebar > hr {

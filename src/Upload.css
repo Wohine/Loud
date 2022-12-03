@@ -1,0 +1,54 @@
+.upload {
+    overflow-y: overlay;
+    display: flex;
+    flex: 0.8;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+    background-color: rgb(84, 168, 236);
+    height: 100vh;
+    color: whitesmoke;
+    justify-content: center;
+}
+
+.upload__input {
+    margin-left: 40px;
+}
+
+.music-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 60px rgba(0,0,0,0.5);
+    max-height: 50%;
+    width: 50%;
+    margin-top: 10%;
+ }
+
+ .music-form input{
+    margin: 10px 0 15px 0;
+    outline: none;
+    padding: 10px;
+ }
+
+
+ .music-form input[file]{
+    padding: 10px;
+ }
+
+ .music-form label{
+    text-transform: uppercase;
+ }
+
+ .music-form button{
+    border: none;
+    padding: 10px 25px;
+    background-color: #1b4571;
+    font-weight: 800;
+    border-radius: 15px;
+    color: #fff;
+ }
+
+ .music-form button:hover {
+    transition: 100ms transform ease-in;
+    transform: scale(1.08);
+  }

@@ -1,10 +1,18 @@
-import "./SearchBody.css"
-import { StateProvider } from "./StateProvider";
 import React, { useEffect, useState } from 'react';
-import algoliasearch from "algoliasearch/lite";
+import "./Home.css"
+import SearchBody from './SearchBody';
+import Spiller from './Spiller';
 import { InstantSearch, SearchBox, Hits } from "react-instantsearch-dom";
+import algoliasearch from "algoliasearch/lite";
 
-function SearchBody(setPlaying, setImage, setTitle) {
+export default function Home() {
+
+  const [a, b] = useState(null)
+  const [song, newsong] = useState(null)
+  const [image, newimage] = useState(null)
+  const [Image, setImage] = useState(null);
+  const [title, setTitle] = useState(null);
+  const [playing, setPlaying] = useState(null);
 
   const searchClient = algoliasearch(
     "CTO885OKFS",
@@ -14,7 +22,9 @@ function SearchBody(setPlaying, setImage, setTitle) {
   const Hit = ({ hit }) => {
     const handleClick = () => {
        setImage(hit.image);
+       console.log("Image: " + Image);
        setPlaying(hit.music);
+       console.log("Song: " + playing)
        setTitle(hit.name);
     };
       return (<div className="hit">
@@ -30,10 +40,10 @@ function SearchBody(setPlaying, setImage, setTitle) {
         <Hits hitComponent={Hit}/>
       </div>)
      }
-     
 
   return (
-    <div className='searchBody'>
+    <div className='home'>
+      <div className='searchBody'>
       <div>
       <InstantSearch searchClient={searchClient} indexName="Music">
             <SearchBox className="search" translations={{placeholder: 'Search for music'}}/>
@@ -43,7 +53,7 @@ function SearchBody(setPlaying, setImage, setTitle) {
       </InstantSearch>
       </div>
     </div>
+      <Spiller title={title} play={playing} image={Image}/>
+    </div>
   )
 }
-
-export default SearchBody

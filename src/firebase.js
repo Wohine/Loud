@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import{ GoogleAuthProvider, getAuth, signInWithPopup, signInWithEmailAndPassword,createUserWithEmailAndPassword,sendPasswordResetEmail, signOut} from "firebase/auth";
 import {getFirestore, query, getDocs,collection,where,addDoc} from "firebase/firestore";
+import "firebase/firestore";
+import { getStorage, ref } from "firebase/storage";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -17,6 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage();
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -80,4 +83,4 @@ const logout = () => {
     signOut(auth);
 };
 
-export {auth, db, sendPasswordReset, logInWithEmailAndPassword, signInWithGoogle, registerWithEmailAndPassword, logout}
+export {auth, db, sendPasswordReset, logInWithEmailAndPassword, signInWithGoogle, registerWithEmailAndPassword, logout, storage, app}

@@ -6,7 +6,7 @@ function SidebarOption({Icon, title, link}) {
   return (
     <div className='sidebarOption'>
         {Icon && <Icon className="sidebarOption__icon" />}
-        <Link to={link}>{title}</Link>
+        <Link className='sidebarOption__link' to={link}>{title}</Link>
     </div>
   )
 }

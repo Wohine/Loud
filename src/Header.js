@@ -11,7 +11,7 @@ function Header() {
   const [user] = useAuthState(auth);
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
-  const userMail = auth.currentUser.email;
+  //const userMail = auth.currentUser.email;
   
 
   const handleMenuOne = () => {
@@ -28,16 +28,12 @@ function Header() {
   return (
     <div className='header'>
         <div className='header__left'>
-            <input
-                placeholder='Search for a song or artist'
-                type="text"
-            />
-            <SearchIcon/>
+            <h1>Welcome to Loud!</h1>
         </div>
         <div className='header__right'>
         <Dropdown
           open={open}
-          trigger={<button className='header__dropDownMainButton'>{user ? (userMail) : ("Log in")}</button>}
+          trigger={<button className='header__dropDownMainButton'>"Bruker Mail"</button>}
           menu={[
         <button onClick={handleMenuOne}>Profile</button>,
         <button onClick={handleMenuTwo}>Sign Out</button>,

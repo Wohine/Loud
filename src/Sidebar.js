@@ -16,7 +16,7 @@ function Sidebar() {
                 <img className='sidebar__logo' src='https://media.discordapp.net/attachments/1039205569048883344/1039216224816615504/logo-no-background.png?width=596&height=671' alt=''/>
             <SidebarOption Icon={HomeIcon} title="Home" link={"/home"}/>
             <SidebarOption Icon={SearchIcon} title="Search" link={"/search"} />
-            <SidebarOption Icon={LibraryMusicIcon} title="Your Collection"/>
+            <SidebarOption Icon={LibraryMusicIcon} title="Upload music" link={"/upload"}/>
             
             <br/>
             <strong className="sidebar__title">PLAYLISTS</strong>
