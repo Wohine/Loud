@@ -1,64 +1,48 @@
 .searchBody {
-    overflow-y: overlay;
-    flex: 0.8;
-    color: white;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 1));
-    background-color: rgb(84, 168, 236);
-    height: 100vh;
-    color: whitesmoke;
+height: 100vh;
+  overflow: auto;
+  width: 60%;
+  padding: 0 10px;
+  
 }
 
-.searchBody::-webkit-scrollbar {
-    display: none;
-}
-
-.searchBody__info {
-    display: flex;
-    align-items: flex-end;
-    padding: 3%;
-}
-
-.searchBody__info > img {
-    height: 15vw;
-    margin: 0 5%;
-    box-shadow: 0 4px 60px rgba(0,0,0,0.5);
-}
-
-.searchBody__infoText {
-    flex: 1;
-}
-
-.searchBody__infoText > h2 {
-    font-size: 3em;
-    margin-bottom: 3%;
-}
-
-.searchBody__infoText > p {
-    font-size: 1em;
-}
-
-.searchBody__songs {
-    z-index: 1;
-    margin: 20px -30px;
-    margin-bottom: 10%;
-    margin-right: 10%;
-}
-
-.searchBody__icons {
+.hit {
+    margin-left: 7%;
+    padding: 20px;
     display: flex;
     align-items: center;
-    margin-left: 9%;
-}
-
-.searchBody__icons > .MuiSvgIcon-root {
-    margin-right: 2%;
-}
-
-.searchBody__shuffle {
-    font-size: 300% !important;
-}
-
-.searchBody__shuffle:hover {
-    transition: 100ms transform ease-in;
-    transform: scale(1.08);
+    color: white;
+    border-radius: 5px;
   }
+
+.hit:hover {
+    cursor: pointer;
+    background-color: black;
+    opacity: 0.8;
+}
+
+.searchBody li {
+    list-style-type: none!important;
+}
+
+.searchBody ul {
+    padding: 0;
+}
+
+.search input{
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    outline: none;
+}
+
+.search button{
+border: none;
+padding: 10px 15px;
+background: #eee;
+}
+
+.songImage {
+    height: 5%;
+    width: 5%;
+}

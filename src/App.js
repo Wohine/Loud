@@ -8,6 +8,8 @@ import Player from './Player';
 import Welcome from './Welcome';
 import SearchPage from './SearchPage';
 import UploadPage from './UploadPage';
+import Home from './Home';
+import HomePage from './HomePage';
 
 function App() {
   return (
@@ -18,7 +20,7 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/reset" element={<Reset />} />
-          <Route exact path="/home" element={<Player />} />
+          <Route exact path="/home" element={<HomePage />} />
           <Route exact path="/search" element={<SearchPage />} />
           <Route exact path="/upload" element={<UploadPage />} />
         </Routes>

@@ -6,12 +6,15 @@ import Header from "./Header";
 import 'firebase/storage';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { useState } from "react";
+import { Await } from "react-router-dom";
+import { doc, setDoc } from "firebase/firestore";
 
 function Upload() {
   const [fileUrl, setFileUrl] = React.useState(null)
   const [musicUrl, setMusicUrl] = React.useState(null)
   const [disable, setDisable] = React.useState(true);
   const [progresspercent, setProgresspercent] = useState(0);
+  const [musicName, setMusicName] = useState('');
 
  React.useEffect(() => {
    if (musicUrl !== null && fileUrl !== null) {
@@ -36,7 +39,7 @@ function Upload() {
         
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setFileUrl(downloadURL)
-          console.log("FileUrl " + fileUrl);
+          console.log("FileUrl " + downloadURL);
         });
       }
     );
@@ -58,28 +61,38 @@ function Upload() {
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          setMusicUrl( downloadURL )
-          console.log("MusicUrl " + musicUrl);
+          setMusicUrl ( downloadURL )
+          console.log("MusicUrl " + downloadURL);
         });
       }
     );   
  }
-const submit =  (e) => {
-   e.preventDefault();  
-     const musicname = e.target.musicname.value;
-     if (!musicname) {
-       return
-     }
-     db.collection("Music").doc(musicname).set({
-       name: musicname,
-       music: musicUrl,
-       image: fileUrl
-     })
-     alert("Music added") 
+
+ const handleChange = event => {
+  setMusicName(event.target.value)
+  console.log('value is:', event.target.value);
+}
+
+  const submit =  (e) => {
+    e.preventDefault();  
+      const musicname = musicName;
+      const docData = {
+        name: musicName,
+        music: musicUrl,
+        image: fileUrl
+      }
+      if (!musicname) {
+        return
+      } else {
+        setDoc(doc(db, "Music", musicName), docData)
+        
+        alert("Music added")
+      }
+
 }
   return (
     <div className="upload">
-      <form onSubmit={submit} className="">
+      <form onSubmit={submit} className="music-form">
         <label>images</label>
         <input
           type="file"
@@ -92,11 +105,12 @@ const submit =  (e) => {
         <input type="file" name="music" onChange={musicchanged} required />
         <input
           type="text"
-          name="musicname"
+          name=""
           placeholder="Music name"
+          onChange={handleChange}
           required
         />
-        <button className="" onClick={submit} disabled={disable} >Submit</button>
+        <button className="" onClick={submit} disabled={disable}>Submit</button>
       </form>
     </div>
  );

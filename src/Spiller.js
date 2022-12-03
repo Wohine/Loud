@@ -4,15 +4,15 @@ import SpillerControls from './SpillerControls'
 import "./Spiller.css"
 
 function Spiller(props) {
+
+
    return (
-       <div className="spiller">
-           <audio></audio>
-           <h4 className='spiller__element'>Playing now</h4>
-          {/*music search functionality */}
-          <SpillerDetail className='spiller__element' song={props.song}/>
-          <SpillerControls className='spiller__element' song={props.song}/>
-          <p className='spiller__element'><strong>Next up: </strong>{props.nextSong.title} by {props.nextSong.artist}</p>
-       </div>
+      <div className="spiller">
+        <audio></audio>
+        <h4>Playing now</h4>
+        <SpillerDetail title={props.title} image={props.image}/>
+        <SpillerControls song={props.play}/>
+      </div>
   )
 }
 export default Spiller

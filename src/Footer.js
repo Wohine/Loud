@@ -1,43 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import "./Footer.css"
-import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import SkipNextIcon from "@mui/icons-material/SkipNext";
-import ShuffleIcon from "@mui/icons-material/Shuffle";
-import RepeatIcon from "@mui/icons-material/Repeat";
-import VolumeDownIcon from "@mui/icons-material/VolumeDown";
-import PauseCircleOutlineIcon from "@mui/icons-material/PauseCircleOutline";
-import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
-import {Grid, Slider} from '@mui/material';
+import SearchBody from './SearchBody';
 import Spiller from './Spiller';
 
-function Footer() {
+export default function Footer(props) {
 
-    const [songs, setsongs] = useState([
-        {
-           title: "song 1",
-           artist: "artist 1",
-           img_src: "./images/img1.jpg",
-           src: "./songs/Måneskin - Beggin ( Testo)_2.mp3",
-        },
-        {
-           title: "song 2",
-           artist: "artist 2",
-           img_src: "./images/img2.jpg",
-           src: "./songs/Young Dumb & Broke Khalid .mp3",
-        },
-      ]);
-    const [currentSongIndex, setCurrentSongIndex] = useState(0);
-    const [nextSongIndex, setNextSongIndex] = useState(currentSongIndex + 1);
+  const [a, b] = useState(null)
+  const [song, newsong] = useState(null)
+  const [image, newimage] = useState(null)
+  const [Image, setImage] = React.useState(null);
+  const [title, setTitle] = React.useState(null);
+  const [playing, setPlaying] = React.useState(null);
 
-    return (
-      <div className='footer'>
-        <Spiller
-            song={songs[currentSongIndex]}
-            nextSong={songs[nextSongIndex]}
-        />
-      </div>
-    )
+  const pull_data = (data) => {
+    b(data);
+  }
+  const pull_song = (data) => {
+    newsong(data);
+  }
+  const pull_img = (data) => {
+    newimage(data);
+  }
+
+  return (
+    <div className='footer'>
+      <SearchBody  func={pull_data} song={pull_song} image={pull_img}/>
+      <Spiller title={a} play={playing} image={Image}/>
+    </div>
+  )
 }
-
-export default Footer

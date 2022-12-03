@@ -3,10 +3,9 @@ function SpillerDetail(props) {
    return (
        <div className="spillerDetail">
            <div className="spillerDetail__img">
-               <img src={props.song.img_src} alt=""></img>
+               <img src={props.image} alt=""></img>
            </div>
-           <h3 className="spillerDetail__title">{props.song.title}</h3>
-           <h3 className="spillerDetail__artist">{props.song.artist}</h3>
+           <h3 className="spillerDetail__title">{props.title}</h3>
        </div>
   )
 }

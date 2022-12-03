@@ -14,11 +14,7 @@
 .header__left {
     flex: 0.5;
     display: flex;
-    background-color: white;
-    padding: 1em;
-    border-radius: 30px;
-    color: gray;
-    align-items: center;
+    color: whitesmoke;
 }
 
 .header__left > input {
