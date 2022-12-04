@@ -44,13 +44,13 @@ export default function Home() {
   return (
     <div className='home'>
       <div className='searchBody'>
-      <div>
-      <InstantSearch searchClient={searchClient} indexName="Music">
-            <SearchBox className="search" translations={{placeholder: 'Search for music'}}/>
-        <main>
-          <Content/>
-       </main>
-      </InstantSearch>
+      <div className='searchResults'>
+        <InstantSearch searchClient={searchClient} indexName="Music">
+              <SearchBox  className="search" searchAsYouType={true} showLoadingIndicator translations={{placeholder: 'Search for music'}}/>
+          <main>
+            <Content/>
+        </main>
+        </InstantSearch>
       </div>
     </div>
       <Spiller title={title} play={playing} image={Image}/>

@@ -12,7 +12,6 @@ function UploadPage() {
           <Sidebar/>
           <Upload/>
         </div>
-        <Footer/>
     </div>
   )
 }
