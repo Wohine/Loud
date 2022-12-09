@@ -1,10 +1,8 @@
 export const initialState = {
     user: null,
-    playlists: [],
-    playing: false,
     item: null,
-    token: null,
-}
+    playlistArray: [],
+};
 
 const reducer = (state, action) => {
     console.log(action);
@@ -25,6 +23,18 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 image: action.image,
+            }
+
+        case "ADD_TO_PLAYLIST":
+            return {
+                ...state,
+                playlistArray: [...state.playlistArray, action.item],
+            };
+
+        case 'EMPTY_PLAYLIST':
+            return {
+                ...state,
+                playlistArray: []
             }
 
         default:
