@@ -23,9 +23,6 @@ export default function Home() {
   const [playing, setPlaying] = useState(null);
   const [artist, setArtist] = useState(null);
   const [submitName, setSubmitName] = useState(null);
-  const [submitImage, setSubmitImage] = useState(null);
-  const [submitMusic, setSubmitMusic] = useState(null);
-  const [submitArtist, setSubmitArtist] = useState(null);
   const [playlistName, setPlaylistName] = useState(null);
 
   const searchClient = algoliasearch(
@@ -33,20 +30,7 @@ export default function Home() {
     "6ee5e446dfb9dd60ebaa8f3b9459f6ea"
   );
 
-  const handleChange = event => {
-    setPlaylistName(event.target.value)
-    console.log('value is:', event.target.value);
-  }
-
   const Hit = ({ hit }) => {
-
-    const toggleModal = (event) => {
-      setSubmitName(hit.name)
-      console.log(submitName.toString())
-      setSubmitArtist(hit.artist)
-      setSubmitImage(hit.image)
-      setSubmitMusic(hit.image)
-    }
 
     const handleClick = () => {
        setImage(hit.image);
@@ -79,7 +63,7 @@ export default function Home() {
     
       return (
         <div className="hit">
-          <AddBoxIcon className='hit__addSong' onClick={toggleModal && submitValues}/>
+          <AddBoxIcon className='hit__addSong' onClick={submitValues}/>
           <ToastContainer/>
           <div className="artist" onClick={handleClick}>
             <img className="songImage" src={hit.image} alt=""/>
