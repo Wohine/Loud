@@ -15,12 +15,10 @@
 
 .menu > li {
   margin: 0;
-
-  background-color: white;
 }
 
 .menu > li:hover {
-  background-color: lightgray;
+  background-color: rgb(90, 90, 90);
 }
 
 .menu > li > button {

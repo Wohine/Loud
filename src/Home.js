@@ -10,6 +10,7 @@ import Dropdown from './DropDown';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { doc, setDoc } from "firebase/firestore";
+import 'reactjs-popup/dist/index.css';
 
 export default function Home() {
 /*
@@ -21,10 +22,11 @@ export default function Home() {
   const [title, setTitle] = useState(null);
   const [playing, setPlaying] = useState(null);
   const [artist, setArtist] = useState(null);
-  const [dispatch] = useStateValue();
+  const [submitName, setSubmitName] = useState(null);
+  const [submitImage, setSubmitImage] = useState(null);
+  const [submitMusic, setSubmitMusic] = useState(null);
+  const [submitArtist, setSubmitArtist] = useState(null);
   const [playlistName, setPlaylistName] = useState(null);
-  const [open, setOpen] = React.useState(false);
-  const [playlistArray, setPlaylistArray] = useState([]);
 
   const searchClient = algoliasearch(
     "CTO885OKFS",
@@ -38,6 +40,14 @@ export default function Home() {
 
   const Hit = ({ hit }) => {
 
+    const toggleModal = (event) => {
+      setSubmitName(hit.name)
+      console.log(submitName.toString())
+      setSubmitArtist(hit.artist)
+      setSubmitImage(hit.image)
+      setSubmitMusic(hit.image)
+    }
+
     const handleClick = () => {
        setImage(hit.image);
        console.log("Image: " + Image);
@@ -47,7 +57,12 @@ export default function Home() {
        setArtist(hit.artist);
     };
 
-    const handleSubmitPlaylist = async (event) => {
+    const submitValues = async (event) => {
+
+      const enteredName = prompt('What playlist should we add the song to?')
+        setPlaylistName(enteredName)
+        console.log(playlistName)
+  
       const notify = () => toast("Playlist uploaded");
   
       const docData = {
@@ -56,22 +71,22 @@ export default function Home() {
         artist: hit.artist,
         song: hit.music
       }
-      if (!hit.name) {
-        return
-      } else {
-        setDoc(doc(db, "users", auth.currentUser?.uid, "media", "playlists", "testspilleliste", hit.name), docData)
-      }
+
+      setDoc(doc(db, "users", auth.currentUser?.uid, "media", "playlists", enteredName, hit.name), docData)
+      
       notify()
     };
+    
       return (
         <div className="hit">
-          <AddBoxIcon className='hit__addSong' onClick={handleSubmitPlaylist}/>
+          <AddBoxIcon className='hit__addSong' onClick={toggleModal && submitValues}/>
           <ToastContainer/>
           <div className="artist" onClick={handleClick}>
             <img className="songImage" src={hit.image} alt=""/>
             <h4>{hit.name}</h4>
           </div>
-        </div>)
+        </div>
+      )
     }
 
   const Content = () => {

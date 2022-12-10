@@ -21,40 +21,67 @@
     transition: 100ms transform ease-in;
     transform: scale(1.08);
 }
-
-.playlistAdder {
-    background-color: black;
-    height: 5%;
-    border-radius: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 3%;
-    margin-top: 3%;
-    justify-content: space-between;
-    padding: 2%;
-}
-
-.playlistAdder > h3 {
-    margin-top: 1.3%;
-}
-
-.playlistFunctionButton {
+.confirmButton {
     border-radius: 20px;
     font-weight: bold;
     background-color: rgb(84, 168, 236);
     color: whitesmoke;
+    width: 50% !important;
+    margin: 2%;
 }
 
-.playlistFunctionName {
-    border-radius: 20px;
-    font-weight: bold;
-    background-color: rgb(84, 168, 236);
-    color: whitesmoke;
-    padding: 7%;
-}
-
-.playlistFunctionButton:hover {
+.confirmButton:hover {
     transition: 100ms transform ease-in;
     transform: scale(1.08);
+}
+
+.modalElement-wrap {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 10;
+    z-index: 4;
+    width: 30%;
+    height: 20%;
+    background-color: none;
+}
+
+.modalElement {
+    text-align: center;
+    border-radius: 8px;
+    width: 100%;
+    height: 80%;
+    background-color: black;
+}
+
+.display-none {
+    display: none;
+}
+
+.modalElement > h4 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.modalElement > button {
+    margin-top: 24px;
+}
+
+
+.display-none {
+    display: none;
+}
+
+.addSong__dropDown {
+    color: black;
+}
+
+.addSong__dropDown > h4 {
+    background-color: black;
+}
+
+.addSongElements {
+    background-color: black;
+    width: 100% !important;
+    z-index: 3;
 }
