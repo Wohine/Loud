@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 function Sidebar() {
 
     const [{ playlists, dispatch }] = useStateValue();
+    
 
     return (
         <div className='sidebar'>
@@ -21,7 +22,7 @@ function Sidebar() {
             <strong className="sidebar__title">PLAYLISTS</strong>
             <hr/>
 
-            <SidebarOption title="Hip hop"/>
+            <SidebarOption title="Gaming" link={"/playlist"}/>
             <SidebarOption title="Rock"/>
             <SidebarOption title="Electro"/>
             <SidebarOption title="Kids music"/>

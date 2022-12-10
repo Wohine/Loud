@@ -33,12 +33,12 @@ export default function Home() {
   const Hit = ({ hit }) => {
 
     const handleClick = () => {
-       setImage(hit.image);
-       console.log("Image: " + Image);
-       setPlaying(hit.music);
-       console.log("Song: " + playing);
-       setTitle(hit.name);
-       setArtist(hit.artist);
+      setImage(hit.image);
+      console.log("Image: " + Image);
+      setPlaying(hit.music);
+      console.log("Song: " + playing);
+      setTitle(hit.name);
+      setArtist(hit.artist);
     };
 
     const submitValues = async (event) => {
