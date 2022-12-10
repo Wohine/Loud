@@ -22,7 +22,6 @@ export default function Home() {
   const [title, setTitle] = useState(null);
   const [playing, setPlaying] = useState(null);
   const [artist, setArtist] = useState(null);
-  const [submitName, setSubmitName] = useState(null);
   const [playlistName, setPlaylistName] = useState(null);
 
   const searchClient = algoliasearch(
