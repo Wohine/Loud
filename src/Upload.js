@@ -15,11 +15,11 @@ function Upload() {
   const [disable, setDisable] = React.useState(true);
   const [progresspercent, setProgresspercent] = useState(0);
   const [musicName, setMusicName] = useState('');
+  const [artistName, setArtistName] = useState('');
 
  React.useEffect(() => {
    if (musicUrl !== null && fileUrl !== null) {
      setDisable(false);
-     alert("click on submit")
      console.log(disable)
    }
  },[musicUrl, fileUrl])
@@ -68,10 +68,15 @@ function Upload() {
     );   
  }
 
- const handleChange = event => {
-  setMusicName(event.target.value)
-  console.log('value is:', event.target.value);
-}
+  const handleChangeMusic = event => {
+    setMusicName(event.target.value)
+    console.log('value is:', event.target.value);
+  }
+
+  const handleChangeArtist = event => {
+    setArtistName(event.target.value)
+    console.log('value is:', event.target.value);
+  }
 
   const submit =  (e) => {
     e.preventDefault();  
@@ -79,7 +84,8 @@ function Upload() {
       const docData = {
         name: musicName,
         music: musicUrl,
-        image: fileUrl
+        image: fileUrl,
+        artist: artistName
       }
       if (!musicname) {
         return
@@ -106,8 +112,15 @@ function Upload() {
         <input
           type="text"
           name=""
-          placeholder="Music name"
-          onChange={handleChange}
+          placeholder="Song title"
+          onChange={handleChangeMusic}
+          required
+        />
+        <input
+          type="text"
+          name=""
+          placeholder="Artist"
+          onChange={handleChangeArtist}
           required
         />
         <button className="" onClick={submit} disabled={disable}>Submit</button>
