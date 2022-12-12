@@ -28,6 +28,17 @@
     opacity: 0.8;
 }
 
+.searchBody {
+    height: 100vh;
+    overflow: auto;
+    width: 60%;
+    padding: 0 10px;
+}
+
+.searchBody__main {
+    margin-bottom: 10%;
+}
+
 .searchBody li {
     list-style-type: none!important;
 }

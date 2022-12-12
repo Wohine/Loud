@@ -1,14 +1,12 @@
 import React from 'react';
-import Body from './Body';
-import Footer from './Footer';
-import "./Player.css";
-import Sidebar from './Sidebar';
-import Upload from './Upload';
+import "../Styles/Upload.css";
+import Sidebar from '../Components/Sidebar';
+import Upload from '../Components/Upload';
 
 function UploadPage() {
   return (
     <div className='player'>
-        <div className='player__body'>
+        <div className='uploadPage__body'>
           <Sidebar/>
           <Upload/>
         </div>

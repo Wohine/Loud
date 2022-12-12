@@ -1,6 +1,6 @@
 import React from 'react'
-import Playlist from './Playlist'
-import Sidebar from './Sidebar'
+import Playlist from '../Components/Playlist'
+import Sidebar from '../Components/Sidebar'
 
 function PlaylistPage() {
   return (

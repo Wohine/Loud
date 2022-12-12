@@ -1,7 +1,7 @@
 import React from 'react'
 import SpillerDetail from './SpillerDetail'
 import SpillerControls from './SpillerControls'
-import "./Spiller.css"
+import "../Styles/Spiller.css"
 
 function Spiller(props) {
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { auth } from './firebase';
-import "./DropDown.css"
+import { auth } from '../firebase';
+import "../Styles/DropDown.css"
 
 const DropDown = ({trigger, menu }) => {
 

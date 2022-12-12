@@ -1,15 +1,12 @@
-import './App.css';
-import Login from './Login';
+import Login from './Pages/Login';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Register from './Register';
-import Reset from './Reset';
-import Player from './Player';
-import Welcome from './Welcome';
-import UploadPage from './UploadPage';
-import Home from './Home';
-import HomePage from './HomePage';
-import PlaylistPage from './PlaylistPage';
+import Register from './Pages/Register';
+import Reset from './Pages/Reset';
+import Welcome from './Pages/Welcome';
+import UploadPage from './Pages/UploadPage';
+import HomePage from './Pages/HomePage';
+import PlaylistPage from './Pages/PlaylistPage';
 
 function App() {
   return (

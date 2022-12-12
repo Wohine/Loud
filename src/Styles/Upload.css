@@ -1,3 +1,7 @@
+.uploadPage__body {
+   display: flex;
+}
+
 .upload {
     overflow-y: overlay;
     display: flex;

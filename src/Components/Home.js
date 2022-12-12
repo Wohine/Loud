@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import "./Home.css"
-import { useStateValue } from './StateProvider';
-import Spiller from './Spiller';
+import "../Styles/Home.css"
+import { useStateValue } from '../StateProvider';
+import Spiller from '../Spiller/Spiller';
 import { InstantSearch, SearchBox, Hits } from "react-instantsearch-dom";
 import algoliasearch from "algoliasearch/lite";
 import AddBoxIcon from '@mui/icons-material/AddBox';
-import { db, auth } from './firebase';
+import { db, auth } from '../firebase';
 import Dropdown from './DropDown';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -93,7 +93,7 @@ export default function Home() {
       <div className='searchBody'>
         <InstantSearch className="searchBox" searchClient={searchClient} indexName="Music">
               <SearchBox className="search" searchAsYouType={true} translations={{placeholder: 'Search for music'}}/>
-          <main>
+          <main className='searchBody__main'>
             <Content/>
           </main>
         </InstantSearch>

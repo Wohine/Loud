@@ -1,7 +1,7 @@
 import React from 'react'
-import './Header.css'
+import '../Styles/Header.css'
 import SearchIcon from "@mui/icons-material/Search";
-import { auth, logout } from './firebase';
+import { auth, logout } from '../firebase';
 import Dropdown from './DropDown';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";

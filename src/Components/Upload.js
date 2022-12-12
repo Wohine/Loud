@@ -1,7 +1,7 @@
 import React from "react";
-import {db, storage} from "./firebase"
+import {db, storage} from "../firebase"
 import "firebase/storage"
-import "./Upload.css"
+import "../Styles/Upload.css"
 import Header from "./Header";
 import 'firebase/storage';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";

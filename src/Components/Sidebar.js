@@ -1,10 +1,10 @@
 import React from 'react'
-import "./Sidebar.css"
+import "../Styles/Sidebar.css"
 import SidebarOption from './SidebarOption'
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
-import { useStateValue } from './StateProvider';
+import { useStateValue } from '../StateProvider';
 import { Link } from 'react-router-dom';
 
 function Sidebar() {

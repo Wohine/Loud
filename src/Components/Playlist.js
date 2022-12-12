@@ -3,7 +3,8 @@ import PlayCircleOutline from '@mui/icons-material/PlayCircleOutline'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import SongRow from './SongRow'
 import { doc, getDoc } from "firebase/firestore";
-import { db, auth } from './firebase';
+import { db, auth } from '../firebase';
+import "../Styles/Playlist.css"
 
 function Playlist() {
 
