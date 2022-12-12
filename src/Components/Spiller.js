@@ -5,11 +5,8 @@ import "../Styles/Spiller.css"
 
 function Spiller(props) {
 
-
    return (
       <div className="spiller">
-        <audio></audio>
-        <h4>Playing now</h4>
         <SpillerDetail title={props.title} image={props.image} artist={props.artist}/>
         <SpillerControls song={props.play}/>
       </div>

@@ -2,15 +2,17 @@
     position: fixed;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     bottom: 0;
-    height: 65px;
+    height: 100px;
     width: 100%;
-    background-color: white;
+    background-color: rgb(29, 31, 34);
     padding: 1em;
+    z-index: 5;
 }
 
 .footer__left {
-    flex: 0.3;
+    flex: 0.5;
     display: flex;
     color: whitesmoke;
     align-items: center;
@@ -18,7 +20,7 @@
 }
 
 .footer__center {
-    flex: 0.4;
+    flex: 0.1;
     padding: 0 100px;
     display: flex;
     align-items: center;
@@ -28,23 +30,30 @@
 }
 
 .footer__right{
-    flex: 0.3;
+    flex: 0.4;
     color: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.footer__albumLogo {
-    height: 30px;
-    width: 30px;
+.footer__img {
+    height: 5em;
+    width: 5em;
     margin-right: 20px;
     object-fit: contain;
 }
 
 .footer__songTitle{
     margin-right: 2em;
+    margin-left: 3em;
+    font-weight: bolder;
 }
+
+.footer__artist {
+    margin-right: 2em;
+}
+
 
 .footer__icon:hover {
     transition: transform 0.2s ease-in-out;
@@ -53,4 +62,36 @@
 
 .footer__volumeSlider {
     width: 10em;
+}
+
+.mobileInfo {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .mobileInfo {
+        display: flex;
+        width: 100%;
+        margin-bottom: 10%;
+    }
+
+    .footer__left {
+        display: none;
+    }
+
+    .footer {
+        height: 30%;
+        display: grid;
+        place-items: center;
+
+    }
+
+    .footer__right {
+        display: none;
+    }
+
+    .footer__center {
+        margin-right: 70%;
+    }
+
 }

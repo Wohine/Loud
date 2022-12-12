@@ -56,4 +56,8 @@
     border: 1px solid #282828;
     width: 90%;
     margin: 10px auto;
-  }
+}
+
+@media only screen and (max-width: 768px) {
+    .sidebar {display: none;}
+}

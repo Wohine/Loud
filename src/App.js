@@ -7,6 +7,7 @@ import Welcome from './Pages/Welcome';
 import UploadPage from './Pages/UploadPage';
 import HomePage from './Pages/HomePage';
 import PlaylistPage from './Pages/PlaylistPage';
+import Footer from './Components/Footer';
 
 function App() {
   return (

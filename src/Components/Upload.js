@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import {db, storage} from "../firebase"
 import "firebase/storage"
 import "../Styles/Upload.css"
@@ -8,6 +8,7 @@ import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { useState } from "react";
 import { Await } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
+import Footer from "./Footer";
 
 function Upload() {
   const [fileUrl, setFileUrl] = React.useState(null)
@@ -97,6 +98,7 @@ function Upload() {
 
 }
   return (
+  <Fragment>
     <div className="upload">
       <form onSubmit={submit} className="music-form">
         <h1>UPLOAD MUSIC TO LOUD</h1>
@@ -127,7 +129,10 @@ function Upload() {
         
         <button className="" onClick={submit} disabled={disable}>Submit</button>
       </form>
+      
     </div>
+    <Footer/>
+  </Fragment>
  );
 }
 export default Upload
