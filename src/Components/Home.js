@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "../Styles/Home.css"
 import { useStateValue } from '../StateProvider';
-import Spiller from '../Spiller/Spiller';
+import Spiller from './Spiller';
 import { InstantSearch, SearchBox, Hits } from "react-instantsearch-dom";
 import algoliasearch from "algoliasearch/lite";
 import AddBoxIcon from '@mui/icons-material/AddBox';
