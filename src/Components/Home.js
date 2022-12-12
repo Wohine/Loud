@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import "../Styles/Home.css"
-import { useStateValue } from '../StateProvider';
 import Spiller from './Spiller';
 import { InstantSearch, SearchBox, Hits } from "react-instantsearch-dom";
 import algoliasearch from "algoliasearch/lite";
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { db, auth } from '../firebase';
-import Dropdown from './DropDown';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { doc, setDoc } from "firebase/firestore";
