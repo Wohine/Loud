@@ -1,15 +1,16 @@
 import React from 'react'
-import "./Sidebar.css"
+import "../Styles/Sidebar.css"
 import SidebarOption from './SidebarOption'
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
-import { useStateValue } from './StateProvider';
+import { useStateValue } from '../StateProvider';
 import { Link } from 'react-router-dom';
 
 function Sidebar() {
 
     const [{ playlists, dispatch }] = useStateValue();
+    
 
     return (
         <div className='sidebar'>
@@ -21,7 +22,7 @@ function Sidebar() {
             <strong className="sidebar__title">PLAYLISTS</strong>
             <hr/>
 
-            <SidebarOption title="Hip hop"/>
+            <SidebarOption title="Gaming" link={"/playlist"}/>
             <SidebarOption title="Rock"/>
             <SidebarOption title="Electro"/>
             <SidebarOption title="Kids music"/>

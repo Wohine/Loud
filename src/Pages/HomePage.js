@@ -1,7 +1,7 @@
 import React from 'react';
-import Home from './Home';
-import "./HomePage.css";
-import Sidebar from './Sidebar';
+import Home from '../Components/Home';
+import "../Styles/HomePage.css";
+import Sidebar from '../Components/Sidebar';
 
 function HomePage() {
   return (

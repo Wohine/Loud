@@ -13,6 +13,58 @@
     display: none;
 }
 
+.hit {
+    margin-left: 7%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    border-radius: 5px;
+  }
+
+.hit:hover {
+    cursor: pointer;
+    background-color: black;
+    opacity: 0.8;
+}
+
+.searchBody {
+    height: 100vh;
+    overflow: auto;
+    width: 60%;
+    padding: 0 10px;
+}
+
+.searchBody__main {
+    margin-bottom: 10%;
+}
+
+.searchBody li {
+    list-style-type: none!important;
+}
+
+.searchBody ul {
+    padding: 0;
+}
+
+.search input{
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    outline: none;
+}
+
+.search button{
+    border: none;
+    padding: 10px 15px;
+    background: #eee;
+}
+
+.songImage {
+    height: 5%;
+    width: 5%;
+}
+
 .hit__addSong {
     margin-right: 5%;
 }
@@ -33,55 +85,4 @@
 .confirmButton:hover {
     transition: 100ms transform ease-in;
     transform: scale(1.08);
-}
-
-.modalElement-wrap {
-    display: grid;
-    place-items: center;
-    position: fixed;
-    top: 10;
-    z-index: 4;
-    width: 30%;
-    height: 20%;
-    background-color: none;
-}
-
-.modalElement {
-    text-align: center;
-    border-radius: 8px;
-    width: 100%;
-    height: 80%;
-    background-color: black;
-}
-
-.display-none {
-    display: none;
-}
-
-.modalElement > h4 {
-    font-size: 24px;
-    margin-bottom: 8px;
-}
-
-.modalElement > button {
-    margin-top: 24px;
-}
-
-
-.display-none {
-    display: none;
-}
-
-.addSong__dropDown {
-    color: black;
-}
-
-.addSong__dropDown > h4 {
-    background-color: black;
-}
-
-.addSongElements {
-    background-color: black;
-    width: 100% !important;
-    z-index: 3;
 }

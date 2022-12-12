@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import "./Home.css"
-import { useStateValue } from './StateProvider';
+import "../Styles/Home.css"
 import Spiller from './Spiller';
 import { InstantSearch, SearchBox, Hits } from "react-instantsearch-dom";
 import algoliasearch from "algoliasearch/lite";
 import AddBoxIcon from '@mui/icons-material/AddBox';
-import { db, auth } from './firebase';
-import Dropdown from './DropDown';
+import { db, auth } from '../firebase';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { doc, setDoc } from "firebase/firestore";
@@ -32,12 +30,12 @@ export default function Home() {
   const Hit = ({ hit }) => {
 
     const handleClick = () => {
-       setImage(hit.image);
-       console.log("Image: " + Image);
-       setPlaying(hit.music);
-       console.log("Song: " + playing);
-       setTitle(hit.name);
-       setArtist(hit.artist);
+      setImage(hit.image);
+      console.log("Image: " + Image);
+      setPlaying(hit.music);
+      console.log("Song: " + playing);
+      setTitle(hit.name);
+      setArtist(hit.artist);
     };
 
     const submitValues = async (event) => {
@@ -45,19 +43,25 @@ export default function Home() {
       const enteredName = prompt('What playlist should we add the song to?')
         setPlaylistName(enteredName)
         console.log(playlistName)
-  
-      const notify = () => toast("Playlist uploaded");
-  
-      const docData = {
-        image: hit.image,
-        name: hit.name,
-        artist: hit.artist,
-        song: hit.music
-      }
-
-      setDoc(doc(db, "users", auth.currentUser?.uid, "media", "playlists", enteredName, hit.name), docData)
       
-      notify()
+      if(enteredName) {
+        const notify = () => toast("Song saved to playlist");
+    
+        const docData = {
+          image: hit.image,
+          name: hit.name,
+          artist: hit.artist,
+          song: hit.music
+          
+        }
+        notify()
+        setDoc(doc(db, "users", auth.currentUser?.uid, "media", "playlists", enteredName, hit.name), docData)
+      } else {
+        const notify = () => toast("Failed to save song to playlist!");
+        notify()
+        return
+      }
+      
     };
     
       return (
@@ -67,6 +71,7 @@ export default function Home() {
           <div className="artist" onClick={handleClick}>
             <img className="songImage" src={hit.image} alt=""/>
             <h4>{hit.name}</h4>
+            <h6>{hit.artist}</h6>
           </div>
         </div>
       )
@@ -84,13 +89,13 @@ export default function Home() {
     <div className='home'>
       <div className='searchBody'>
         <InstantSearch className="searchBox" searchClient={searchClient} indexName="Music">
-              <SearchBox className="search" translations={{placeholder: 'Search for music'}}/>
-          <main>
+              <SearchBox className="search" searchAsYouType={true} translations={{placeholder: 'Search for music'}}/>
+          <main className='searchBody__main'>
             <Content/>
-        </main>
+          </main>
         </InstantSearch>
       </div>
-      <Spiller title={title} play={playing} image={Image}/>
+      <Spiller title={title} play={playing} image={Image} artist={artist}/>
     </div>
   )
 }
