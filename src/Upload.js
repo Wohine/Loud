@@ -99,16 +99,7 @@ function Upload() {
   return (
     <div className="upload">
       <form onSubmit={submit} className="music-form">
-        <label>images</label>
-        <input
-          type="file"
-          className=""
-          name="img"
-          onChange={filechanged}
-          required
-        />
-        <label>Music files</label>
-        <input type="file" name="music" onChange={musicchanged} required />
+        <h1>UPLOAD MUSIC TO LOUD</h1>
         <input
           type="text"
           name=""
@@ -123,6 +114,17 @@ function Upload() {
           onChange={handleChangeArtist}
           required
         />
+        <label>images</label>
+        <input
+          type="file"
+          className=""
+          name="img"
+          onChange={filechanged}
+          required
+        />
+        <label>Music files</label>
+        <input type="file" name="music" onChange={musicchanged} required />
+        
         <button className="" onClick={submit} disabled={disable}>Submit</button>
       </form>
     </div>

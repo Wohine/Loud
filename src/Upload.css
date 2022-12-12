@@ -24,6 +24,10 @@
     margin-top: 10%;
  }
 
+.music-form > h1 {
+   margin-bottom: 5%;
+}
+
  .music-form input{
     margin: 10px 0 15px 0;
     outline: none;
@@ -51,4 +55,6 @@
  .music-form button:hover {
     transition: 100ms transform ease-in;
     transform: scale(1.08);
+    background-color: white;
+    color: #1b4571;
   }
