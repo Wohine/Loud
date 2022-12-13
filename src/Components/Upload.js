@@ -2,11 +2,9 @@ import React, { Fragment } from "react";
 import {db, storage} from "../firebase"
 import "firebase/storage"
 import "../Styles/Upload.css"
-import Header from "./Header";
 import 'firebase/storage';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { useState } from "react";
-import { Await } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
 import Footer from "./Footer";
 
@@ -23,7 +21,7 @@ function Upload() {
      setDisable(false);
      console.log(disable)
    }
- },[musicUrl, fileUrl])
+ },[musicUrl, fileUrl, disable])
 
   const filechanged = async (e) =>{
       var file = e.target.files[0];
@@ -56,6 +54,7 @@ function Upload() {
         const progress =
           Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
         setProgresspercent(progress);
+        console.log(progresspercent)
       },
       (error) => {
         alert(error);

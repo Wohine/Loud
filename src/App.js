@@ -1,5 +1,5 @@
 import Login from './Pages/Login';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from './Pages/Register';
 import Reset from './Pages/Reset';
@@ -7,7 +7,6 @@ import Welcome from './Pages/Welcome';
 import UploadPage from './Pages/UploadPage';
 import HomePage from './Pages/HomePage';
 import PlaylistPage from './Pages/PlaylistPage';
-import Footer from './Components/Footer';
 
 function App() {
   return (

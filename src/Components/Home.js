@@ -1,6 +1,5 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import "../Styles/Home.css"
-import Spiller from './Spiller';
 import { InstantSearch, SearchBox, Hits } from "react-instantsearch-dom";
 import algoliasearch from "algoliasearch/lite";
 import AddBoxIcon from '@mui/icons-material/AddBox';
@@ -21,7 +20,6 @@ export default function Home() {
   const [title, setTitle] = useState(null);
   const [playing, setPlaying] = useState(null);
   const [artist, setArtist] = useState(null);
-  const [submitName, setSubmitName] = useState(null);
   const [playlistName, setPlaylistName] = useState(null);
 
   const searchClient = algoliasearch(
