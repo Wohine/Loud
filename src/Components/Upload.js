@@ -116,16 +116,22 @@ function Upload() {
           onChange={handleChangeArtist}
           required
         />
-        <label>images</label>
+        <label htmlFor="imageInput">images</label>
         <input
           type="file"
-          className=""
+          className="imageInput"
           name="img"
           onChange={filechanged}
           required
         />
-        <label>Music files</label>
-        <input type="file" name="music" onChange={musicchanged} required />
+        <label htmlFor="musicInput">Music files</label>
+        <input 
+          className="musicInput"
+          type="file" 
+          name="music" 
+          onChange={musicchanged} 
+          required 
+        />
         
         <button className="" onClick={submit} disabled={disable}>Submit</button>
       </form>

@@ -99,7 +99,7 @@ export default function Home() {
             </InstantSearch>
           </div>
           <div className='home__spillerDetails'>
-          <h3>{title}</h3>
+            <h3>{title}</h3>
             <h2>{artist}</h2>
             <img className='home__spillerImage' src={Image} alt=""></img> 
           </div>
