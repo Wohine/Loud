@@ -35,10 +35,10 @@ function Playlist() {
         </div>
         </div>
         <div className='body__songs'>
-        <div className='body__icons'>
-            <PlayCircleOutline className='body__shuffle'/>
-            <MoreHorizIcon/>
-        </div>
+            <div className='body__icons'>
+                <PlayCircleOutline className='body__shuffle'/>
+                <MoreHorizIcon/>
+            </div>
             <SongRow/>
             <SongRow/>
             <SongRow/>

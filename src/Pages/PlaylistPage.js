@@ -1,6 +1,8 @@
 import React from 'react'
+import Footer from '../Components/Footer'
 import Playlist from '../Components/Playlist'
 import Sidebar from '../Components/Sidebar'
+import "../Styles/Player.css"
 
 function PlaylistPage() {
   return (
@@ -9,6 +11,7 @@ function PlaylistPage() {
           <Sidebar/>
           <Playlist/>
         </div>
+        <Footer/>
     </div>
   )
 }

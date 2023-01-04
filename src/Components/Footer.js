@@ -1,29 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import "./Styles/Footer.css"
-import Spiller from '../Spiller/Spiller';
+import React, { Fragment, useEffect, useState } from 'react';
+import "../Styles/Footer.css"
+import Spiller from './Spiller';
+import SpillerDetail from "./SpillerDetail"
+import SpillerControls from "./SpillerControls"
 
-export default function Footer(props) {
-
-  const [a, b] = useState(null)
-  const [song, newsong] = useState(null)
-  const [image, newimage] = useState(null)
-  const [Image, setImage] = React.useState(null);
-  const [title, setTitle] = React.useState(null);
-  const [playing, setPlaying] = React.useState(null);
-
-  const pull_data = (data) => {
-    b(data);
-  }
-  const pull_song = (data) => {
-    newsong(data);
-  }
-  const pull_img = (data) => {
-    newimage(data);
-  }
+function Footer(props) {
 
   return (
-    <div className='footer'>
-      <Spiller title={a} play={playing} image={Image}/>
-    </div>
-  )
+    <Fragment>
+      <div className="footer">
+        <div className='mobileInfo'>
+          <SpillerDetail title={props.title} image={props.image} artist={props.artist}/>
+        </div>
+        <audio></audio>
+        <div className='footer__left'>
+          <SpillerDetail title={props.title} image={props.image} artist={props.artist}/>
+        </div>
+        <div className='footer__center'>
+          <SpillerControls song={props.play}/>
+        </div>
+        <div className='footer__right'></div>
+      </div>
+    </Fragment>
+ )
 }
+export default Footer

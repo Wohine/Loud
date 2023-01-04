@@ -1,13 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
 import {db, storage} from "../firebase"
 import "firebase/storage"
 import "../Styles/Upload.css"
-import Header from "./Header";
 import 'firebase/storage';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { useState } from "react";
-import { Await } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
+import Footer from "./Footer";
 
 function Upload() {
   const [fileUrl, setFileUrl] = React.useState(null)
@@ -22,7 +21,7 @@ function Upload() {
      setDisable(false);
      console.log(disable)
    }
- },[musicUrl, fileUrl])
+ },[musicUrl, fileUrl, disable])
 
   const filechanged = async (e) =>{
       var file = e.target.files[0];
@@ -55,6 +54,7 @@ function Upload() {
         const progress =
           Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
         setProgresspercent(progress);
+        console.log(progresspercent)
       },
       (error) => {
         alert(error);
@@ -97,6 +97,7 @@ function Upload() {
 
 }
   return (
+  <Fragment>
     <div className="upload">
       <form onSubmit={submit} className="music-form">
         <h1>UPLOAD MUSIC TO LOUD</h1>
@@ -114,20 +115,29 @@ function Upload() {
           onChange={handleChangeArtist}
           required
         />
-        <label>images</label>
+        <label htmlFor="imageInput">images</label>
         <input
           type="file"
-          className=""
+          className="imageInput"
           name="img"
           onChange={filechanged}
           required
         />
-        <label>Music files</label>
-        <input type="file" name="music" onChange={musicchanged} required />
+        <label htmlFor="musicInput">Music files</label>
+        <input 
+          className="musicInput"
+          type="file" 
+          name="music" 
+          onChange={musicchanged} 
+          required 
+        />
         
         <button className="" onClick={submit} disabled={disable}>Submit</button>
       </form>
+      
     </div>
+    <Footer/>
+  </Fragment>
  );
 }
 export default Upload

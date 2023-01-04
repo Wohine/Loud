@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import "../Styles/Home.css"
-import Spiller from './Spiller';
 import { InstantSearch, SearchBox, Hits } from "react-instantsearch-dom";
 import algoliasearch from "algoliasearch/lite";
 import AddBoxIcon from '@mui/icons-material/AddBox';
@@ -9,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { doc, setDoc } from "firebase/firestore";
 import 'reactjs-popup/dist/index.css';
+import Footer from "./Footer"
 
 export default function Home() {
 /*
@@ -86,16 +86,23 @@ export default function Home() {
   }
 
   return (
-    <div className='home'>
-      <div className='searchBody'>
-        <InstantSearch className="searchBox" searchClient={searchClient} indexName="Music">
-              <SearchBox className="search" searchAsYouType={true} translations={{placeholder: 'Search for music'}}/>
-          <main className='searchBody__main'>
-            <Content/>
-          </main>
-        </InstantSearch>
-      </div>
-      <Spiller title={title} play={playing} image={Image} artist={artist}/>
-    </div>
+      <Fragment>
+        <div className='home'>
+          <div className='searchBody'>
+            <InstantSearch className="searchBox" searchClient={searchClient} indexName="Music">
+                  <SearchBox className="search" searchAsYouType={true} translations={{placeholder: 'Search for music'}}/>
+              <main className='searchBody__main'>
+                <Content/>
+              </main>
+            </InstantSearch>
+          </div>
+          <div className='home__spillerDetails'>
+            <h3>{title}</h3>
+            <h2>{artist}</h2>
+            <img className='home__spillerImage' src={Image} alt=""></img> 
+          </div>
+        </div>
+        <Footer title={title} play={playing} image={Image} artist={artist}/>
+    </Fragment>
   )
 }
